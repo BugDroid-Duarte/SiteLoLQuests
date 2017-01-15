@@ -1,3 +1,62 @@
+<?php
+ ob_start();
+ session_start();
+ require_once 'dbconnect.php';
+
+ // it will never let you open index(login) page if session is set
+ if (isset($_SESSION['user'])!="") {
+  header("Location: ../profile.html");
+  exit;
+ }
+
+ $error = false;
+
+ if (isset($_POST['email']) && isset($_POST['password'])) {
+
+  // prevent sql injections/ clear user invalid inputs
+  $email = trim($_POST['email']);
+  $email = strip_tags($email);
+  $email = htmlspecialchars($email);
+
+  $password = trim($_POST['password']);
+  $password = strip_tags($password);
+  $password = htmlspecialchars($password);
+  // prevent sql injections / clear user invalid inputs
+
+  if(empty($email)){
+   $error = true;
+   $emailError = "Please enter your email address.";
+  } else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
+   $error = true;
+   $emailError = "Please enter valid email address.";
+  }
+
+  if(empty($password)){
+   $error = true;
+   $passError = "Please enter your password.";
+  }
+
+  // if there's no error, continue to login
+  if (!$error) {
+
+   $password = hash('sha256', $password); // password hashing using SHA256
+
+   $res=mysqli_query($con, "SELECT id, nickname, password FROM users WHERE email='$email'");
+   $row=mysqli_fetch_array($res);
+   $count = mysqli_num_rows($res);
+
+   // if uname/pass correct it returns must be 1 row
+   if( $count == 1 && $row['password']=$password) {
+    $_SESSION['user'] = $row['id'];
+    header("Location: ../profile.html");
+   } else {
+    $errMSG = "Incorrect Credentials, Try again...";
+   }
+  }
+ }
+?>
+
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -64,14 +123,14 @@
             </div>
           </nav>
 
-          <form class="form-signin">
+          <form class="form-signin" action="./php/login.php" method="post">
             <h2 class="form-signin-heading">Please login</h2>
-            <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+            <input type="text" class="form-control" name="email" placeholder="Username" required="" autofocus="" />
             <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
             <label class="checkbox">
               <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
             </label>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Login</button>
           </form>
 
 
@@ -85,3 +144,4 @@
         <script src="./js/bootstrap.min.js"></script>
         <script src="./js/master.js"></script>
 </html>
+<?php ob_end_flush(); ?>
