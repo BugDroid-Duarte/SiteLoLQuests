@@ -13,7 +13,6 @@ if (mysqli_connect_errno()) {
 
 if (isset($_POST['name']) && isset($_POST['nickname']) && isset($_POST['email']) && isset($_POST['password'])) {
 
-  echo "isset";
   $name = $_POST['name'];
   $nickname = $_POST['nickname'];
   $email = $_POST['email'];
@@ -23,7 +22,7 @@ if (isset($_POST['name']) && isset($_POST['nickname']) && isset($_POST['email'])
   $insert = mysqli_query($con, $query) or die (mysqli_error($con));
 
   if ($insert) {
-        echo "sucess";
+        echo "Sucess. User inserted.";
      } else {
         echo "RIP";
      }

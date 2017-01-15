@@ -80,7 +80,7 @@ padding-top: 00px;
   width: 70px;
   height: 40px;
   position: absolute;
-  left: 45%;
+  left: 47%;
 }
 
 .navbar-brand {
@@ -392,12 +392,12 @@ padding-top: 00px;
 .tablecontainer {
   border-radius: 6px;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   background: linear-gradient(#1F394B,#0D1417);
 }
 
 .content {
-  margin-top: 35%;
+  margin-top: 25%;
   padding: 1px;
 }
 

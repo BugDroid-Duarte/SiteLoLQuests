@@ -80,7 +80,7 @@ html { height: 100%;}
   width: 70px;
   height: 40px;
   position: absolute;
-  left: 45%;
+  left: 47%;
 }
 
 .navbar-brand {
@@ -362,17 +362,13 @@ html { height: 100%;}
 	}
 
 input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  margin-bottom: 5px;
   color: white;
   outline: 0;
 }
 
 input[type="password"] {
-  margin-bottom: 20px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin-bottom: 1px;
   background: rgba(0,0,0,0.3);
   color: white;
   outline: 0;

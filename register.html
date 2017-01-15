@@ -67,10 +67,10 @@
 
           <form class="form-signin" action="register.php" method="post">
             <h2 class="form-signin-heading">Register</h2>
-            <input type="text" class="form-control" name="name" placeholder="name" required="" autofocus="" />
-            <input type="text" class="form-control" name="nickname" placeholder="nickname" required="" autofocus="" />
-            <input type="text" class="form-control" name="email" placeholder="email" required="" autofocus="" />
-            <input type="password" class="form-control" name="password" placeholder="password" required=""/>
+            <input type="text" class="form-control" name="name" placeholder="name" autofocus="" data-validate="required"/>
+            <input type="text" class="form-control" name="nickname" placeholder="nickname" autofocus=""/>
+            <input type="text" class="form-control" name="email" placeholder="email" autofocus="" data-validate="required, email"/>
+            <input type="password" class="form-control" name="password" placeholder="password" data-validate="required"/>
             <label class="checkbox">
               <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
             </label>
@@ -86,4 +86,5 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
         <script src="./js/master.js"></script>
+        <script src="./js/verify.notify.min.js"></script>
 </html>
