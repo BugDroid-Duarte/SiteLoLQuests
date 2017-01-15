@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" >
+    <link rel="stylesheet" href="./css/orlando.css" >
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" Pagina Inicial ">
+
+</head>
+
+<body>
+
+<div id="wrapper">
+    <!-- Sidebar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <ul class="nav sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                   <img src="./img/logo2.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="index.html">Login</a>
+            </li>
+            <li>
+                <a href="register.html">Register</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="profile.html">Profile</a>
+            </li>
+            <li>
+                <a href="matchhistory.html">Match History</a>
+            </li>
+            <li>
+                <a href="leaderboard.html">Leaderboard</a>
+            </li>
+            <li>
+                <a href="contacts.html">Contacts</a>
+            </li>
+            <li>
+                <a href="#">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+          <nav class="navbar navbar-default navbar-static-top">
+
+            <div class="container" style="width: 100%;">
+              <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                  <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+          <span class="hamb-bottom"></span>
+              </button>
+              <div class="navbar-header">
+                  <a class="navbar-brand" href="./index.html"target="_self" style="margin-left: 55px;"> <img src="./img/logo.png" alt=""></a>
+             </div>
+            </div>
+          </nav>
+
+          <form class="form-signin" action="register.php" method="post">
+            <h2 class="form-signin-heading">Register</h2>
+            <input type="text" class="form-control" name="name" placeholder="name" required="" autofocus="" />
+            <input type="text" class="form-control" name="nickname" placeholder="nickname" required="" autofocus="" />
+            <input type="text" class="form-control" name="email" placeholder="email" required="" autofocus="" />
+            <input type="password" class="form-control" name="password" placeholder="password" required=""/>
+            <label class="checkbox">
+              <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+          </form>
+
+    <!-- /#page-content-wrapper -->
+  </div>
+</div>
+
+<!-- /#wrapper -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/master.js"></script>
+</html>
